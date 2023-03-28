@@ -32,7 +32,7 @@ pnpm dev
 
 ## Features
 
-### Fetch transaction by ETH address
+### Fetch transactions by ETH address
 
 `GET /api/tsx`
 
