@@ -22,12 +22,17 @@ export default async function handler(req, res) {
 
   const html = await readPage(query);
   const data = parser(html);
+  const page = Number(query.p ?? 1);
+  const pageSize = Number(query.ps ?? 50);
+  const count = totalTxn(html);
+  const dataSize = data.length;
 
+  res.setHeader('Cache-Control', 'max-age=12, stale-while-revalidate=59');
   res.status(200).json({
-    page: Number(query.p ?? 1),
-    pageSize: Number(query.ps ?? 50),
-    count: totalTxn(html),
-    dataSize: data.length,
+    page,
+    pageSize,
+    count,
+    dataSize,
     data,
   });
 }
