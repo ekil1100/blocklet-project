@@ -26,6 +26,10 @@ Run dev server
 pnpm dev
 ```
 
+## Links
+
+- [blocklet document](https://developer.blocklet.io/docs/zh)
+
 ## Features
 
 ### Fetch transaction by ETH address
